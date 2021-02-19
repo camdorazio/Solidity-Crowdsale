@@ -1,1 +1,1 @@
-# Solidity-Crowdsale
+# Solidity - Crowdsale Example
