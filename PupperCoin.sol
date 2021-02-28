@@ -14,5 +14,7 @@ contract PupperCoin is ERC20, ERC20Detailed, ERC20Mintable {
         public
     {
         // constructor can stay empty
+        
+        mint(msg.sender, initial_supply); // this is to mint the initial_supply to myself
     }
 }
