@@ -10,7 +10,7 @@ The PupperCoinCrowdsale.sol smart contract will leverage the PupperCoin.sol smar
 
 The following 4 tools will be used to build the solidity smart contracts and test the Crowdsale for our new token: 
 
-| ![Remix](./Images/RemixLogo.png "Remix") | ![MetaMask](./Images/MetaMaskLogo.png "MetaMask")|![Ganache](./Images/GanacheLogo.png "Ganache") | ![MyCrypto](https://www.mycrypto.com/static/logo-mycrypto-6ff110266be7471b1af9082207376dec.svg "MyCrypto") |
+| ![Remix](./Images/RemixLogo.png "Remix") | ![MetaMask](./Images/MetaMaskLogo.png "MetaMask")|![Ganache](./Images/GanacheLogo.png "Ganache") | ![MyCrypto](./Images/MyCryptoLogo.png "MyCrypto") |
 |:---:|:---:|:---:|:---:|
 | Remix | MetaMask | Ganache | MyCrypto |
 
@@ -27,7 +27,7 @@ Once confirmed that there are no errors, we can now deploy this smart contract. 
 To deploy the smart contract, we need to define the name, symbol, and initial supply of our new token.
 Name: CAMStoken
 Symbol: CAMS
-Initial Supply: 10 million tokens (i.e. 10000000000000000000000000 - adding in 18 more zero's since our decimal precision is 1).
+Initial Supply: 10 million tokens (i.e. 10000000000000000000000000 - adding in 18 more zero's since our decimal precision is 18).
 
 
 |![PC.soldeploy](./Screenshots/PCdeploy.png "PupperCoin.sol Deploy")| ![PC.soldeployMMconfirm](./Screenshots/PCdeployMMconfirm.png "PupperCoin.sol Deploy MM confirm")| ![PC.soldeploy](./Screenshots/PCdeployMMconfirmation.png "PupperCoin.sol Deploy MM confirmation")| 
@@ -56,38 +56,47 @@ Next we will need to add the new custom token to MetaMask. In MetaMask, click on
 
 The PupperCoinCrowdsale.sol smart contract can be found in the PupperCoinCrowdsale.sol file.  This contract inherits the OpenZepplin Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale, and RefundablePostDeliveryCrowdsale smart contracts which are imported from Github. All variables defined in the constructor are aligned with variables required to be passed into each inherited crowdsale smart contract's constructor.  No variables were hardcoded in this smart contract, which allows for this smart contract to be reused in the future. We will not be deploying the PupperCoinCrowdsale.sol smart contract. The smart contract we need to deploy is the PupperCoinCrowdsaleDeployer smart contract which is a wrapper and imbedded in the PupperCoinCrowdsale.sol smart contract code.
 
-### PupperCoinCrowdsaleDeployer Contract
+### PupperCoinCrowdsaleDeployer Smart Contract
 
 The PupperCoinCrowdsaleDeployer smart contract is imbedded in PupperCoinCrowdsale.sol file.  This contract was built to bring all the previous smart contracts together and deploy the crowdsale.  We will deploy the PupperCoinCrowdsaleDeployer smart contract and provide the 3 variables, 2 of which we generated from the PupperCoin.sol smart contract. The name of the token will be provided here ("CAMStoken"), the symbol will be provided ("CAMS"), and the wallet address, i.e. the address where we originally minted the new token, which will be the wallet address collecting all the Ether raised from the crowd sale.  Note, this is the same information we used to deploy the PupperCoin.sol smart contract. 
 
 In the body of the constructor the token_address and token_sale_address variables are defined.  The token_address variable references the PupperCoin contract and generates an address to this token.  The token_sale_address variable references the PupperCoinSale contract and generates an address to the sale.  When defining the sale, the following parameters are set: 
-  - Rate of 1, which means 1 token = 1 ETH 
-  - Cap of 300 (ETH)
+  - Rate of 1, which means 1 token = 1 wei 
+  - Wallet Address collecting the token
+  - Token sales
   - Start time of now.
   - End time of 24 weeks from now (now + 24 weeks)
   - Goal of 300 (ETH), which matches the cap defined in the exercise provided (i.e. "Homework_Insructions.md"). 
   
 Finally, the PupperCoinCrowdsale smart contract is added as the minter and the PupperCoinSaleDeployer smart contract has its minting abilities renounced.  
 
+Now we need to deploy the PupperCoinCrowdsaleDeployer Smart Contract. Once you have deployed the PupperCoinCrowdsaleDeployer Smart Contract, you need to get the token_sale_address and add it into the "At address" button. Then click the "At address" button and it to deploy your PupperCoinCrowdsale Smart Contract. Once the transaction is confirmed, you will now be able to interact with the PupperCoinCrowdsale Smart Contract.
+
+|![PCCD Deploy TSA](./Screenshots/PCCDtokenaddress.png "PupperCoinCrowdsaleDeployer Token Sale Address") | ![PCCD AA](./Screenshots/PCCDataddress.png "PupperCoinCrowdsaleDeployer At Address") |![PCC inteact](./Screenshots/PCCinteractbuttons.png "PupperCoinCrowdsale Interact Buttons") 
+|:---:|:---:|:---:|
+| PupperCoinCrowdsaleDeployer Token Sale Address | PupperCoinCrowdsaleDeployer At Address | PupperCoinCrowdsale Interact Buttons |
+
 ### Interacting with the Smart Contracts
 
-The smart contracts will intially be tested on my Local Network. Once the smart contracts are deployed, they can be interacted with to view the token address and token sale address.  As mentioned previously, this is due to the inheritance of the PupperCoin.sol and PupperCoinCrowdsale.sol smart contracts.  
+The smart contracts will intially be tested on my Local Network. Once the smart contracts are deployed, they can be interacted with to view the token address and token sale address.  As mentioned previously, this is due to the inheritance of the PupperCoin.sol and PupperCoinCrowdsale.sol smart contracts. 
 
 Now, let's test participation in the crowdsale by purchasing tokens.  As can be viewed below, the number of tokens to be purchased can first be entered in the "Value" box and a wallet address needs to be entered within the contract interaction, "buyTokens" box, which is the wallet address that will be acquiring the tokens.  *NOTE:* The acquiring wallet address needs to be different than the wallet address that was used to deploy the contract as the wallet address from the PupperCoin.sol smart contract will be collecting the ETH from the crowd sale.
 
 Furthermore, the smart contract can be interacted with once the tokens are purchased.  You can view the crowd sale goal, cap, if the goal has been reached, or if the sale is still open, finalized, etc. by clicking on the corresponding buttons.  Once the crowd sale is finalize, and closed, the responses provided by these interactions will change to appropriately reflect the end of the crowdsale. 
 
-![Buying Tokens](Screenshots/buy_tokens.gif)
+|![Buying Tokens](Screenshots/buy_tokens1.png "Buying tokens ETH amount") | ![Buying Tokens](Screenshots/buy_tokens1.png "Buying tokens wallet address") 
+|:---:|:---:|
+| Buying tokens - 75 wei | Buying tokens - 75 ETH Address |
 
 Below we can see the changes in the smart contract interactions once the sale has been finalized and closed.  This was done for testing and example purposes.  As can be seen below, the crowdsale was first finalized.  Once finalized, the "finalized" interaction then evaluates to true, the "isOpen" interaction evaluates to false, and the "hasClosed" interaction evaluates to true. You can also view and verfy that the goal and cap of 300 (ETH) has been met.  
 
-![Finalizing Sale](Screenshots/sale_closed.gif)
+![Finalizing Sale](Screenshots/sale_closed.png)
 
 # Deploying the Smart Contracts to the Ropsten Test Network
 
 We will now add all the smart contracts to the Ropsten Test Network and deploy them for further testing.  To test all functionality on the Ropsten Test Netwrok, a cap and goal of 3 ETH was set (due to limited availability of ETH from faucets on the Ropsten Test Network) and the end time of the sale was 50 minutes after launching. The 50 minutes will allow me to process the transactions required to reach the 3 ETH cap using 5 test wallet accounts (the original wallet address where the coins were minted and will collect the ETH from the crowdsale and 4 other addresses to participate in the crowd sale), using both MetaMask and MyCrypto. 
 
-You can simply follow all of the above processes and just change from your Local Network to the Ropsten Test Network in MetaMask and test the same functoinality and process the same transactions to interact with the smart contracts. Once you have deployed and tested the smart contracts on the Ropsten Test Network using MetaMask, and are satisfied with the results, you can now use MyCrypto for further testing of the crowd sale.
+You can simply follow all of the above processes and just change from your Local Network to the Ropsten Test Network in MetaMask and test the same functoinality as well as process the same transactions to interact with the smart contracts. Once you have deployed and tested the smart contracts on the Ropsten Test Network using MetaMask, and are satisfied with the results, you can now use MyCrypto for further testing of the crowd sale.
 
 # Adding Custom Tokens to MyCrypto
 
@@ -108,3 +117,5 @@ The screenshot below shows transaction hash details from MyCrypto.
 The screenshot below shows the transaction on Etherscan, which reflects the value of 10 wei transacted.  
 
 ![Etherscan Transaction](Screenshots/etherscan_transaction.PNG)
+
+**CONGRATULATIONS ON MINTING AND SUCESSFULLY HAVING A CROWDSALE OF YOUR ERC-20 TOKEN!!!**
