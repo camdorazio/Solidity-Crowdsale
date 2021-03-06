@@ -102,6 +102,17 @@ Below we can see the changes in the smart contract interactions once the sale ha
 
 We will now add all the smart contracts to the Ropsten Test Network and deploy them for further testing.  You can simply follow all of the above processes and just change from your Local Network to the Ropsten Test Network in MetaMask and test the same functoinality as well as process the same transactions to interact with the smart contracts. Once you have deployed and tested the smart contracts on the Ropsten Test Network using MetaMask, and are satisfied with the results, you can now use MyCrypto for further testing of the crowd sale.
 
+Below are screenshots of the Etherscan transactions for the deployment of the contracts along with a test MetaMask transaction.
+
+|![Pupper Coin Deploy Ropsten](Screenshots/PCdeployRopsten.png "Pupper Coin Deploy Ropsten") | ![Pupper Coin Crowdsale Deploy Ropsten](Screenshots/PCCdeployRopsten.png "Pupper Coin Crowdsale Deploy Ropsten") | 
+|:---:|:---:|
+| Pupper Coin Deploy Ropsten | Pupper Coin Crowdsale Deploy Ropsten |
+
+|![Pupper Coin Crowdsale Deployer Ropsten](Screenshots/PCCDdeployRopsten.png "Pupper Coin Crowdsale Deployer Ropsten") | ![Test 100 wei transaction Ropsten -  MetaMask](Screenshots/100weibuyMM.png "Test 100 wei transaction Ropsten -  MetaMask") | 
+|:---:|:---:|
+| Pupper Coin Crowdsale Deployer Ropsten | Test 100 wei transaction Ropsten -  MetaMask |
+
+
 # Adding Custom Tokens to MyCrypto
 
 Once we have added the custome token in MetaMask on the Ropsten Test Network, we can also add the custom token to MyCrypto as well for testing purposes.  Once in your MyCrypto account, click on "Add Custom Token" under the "Token Balances" section, enter the address of your token, and click "Save".  Once the token is added you will see it populate on your MyCrypto, as shown below. 
@@ -112,7 +123,7 @@ Once we have added the custome token in MetaMask on the Ropsten Test Network, we
 
 ![MyCrypto Token3](Screenshots/mycrypto_add_token3.PNG)
 
-Finally, the below screen shots outline an actual transaction on the Ropsten test network.  Due to limited ETH available on the test network, a transaction of 10 wei was made.  This is reflected in the transaction screen shots below, but also means the token value will continue to show 0 due to such a small amount of wei being transacted.  
+Finally, the below screen shots outline an actual transaction on the Ropsten test network.  Due to limited ETH available on the test network, a transaction of 100 wei was made.  This is reflected in the transaction screen shots below, but also means the token value will continue to show 0 due to such a small amount of wei being transacted.  
 
 The screenshot below shows transaction hash details from MyCrypto. 
 
