@@ -117,19 +117,19 @@ Below are screenshots of the Etherscan transactions for the deployment of the co
 
 Once we have added the custome token in MetaMask on the Ropsten Test Network, we can also add the custom token to MyCrypto as well for testing purposes.  Once in your MyCrypto account, click on "Add Custom Token" under the "Token Balances" section, enter the address of your token, and click "Save".  Once the token is added you will see it populate on your MyCrypto, as shown below. 
 
-|![MyCrypto Token 1](Screenshots/mycrypto_transaction1.PNG "MyCrypto Token 1") | ![MyCrypto Token 2](Screenshots/mycrypto_transaction2.png "MyCrypto Token 2") | ![MyCrypto Token 3](Screenshots/mycrypto_transaction3.png "MyCrypto Token 3") |
+|![MyCrypto Token 1](Screenshots/mycrypto_transaction1.png "MyCrypto Token 1") | ![MyCrypto Token 2](Screenshots/mycrypto_transaction2.png "MyCrypto Token 2") | ![MyCrypto Token 3](Screenshots/mycrypto_transaction3.png "MyCrypto Token 3") |
 |:---:|:---:|:---:|
 | MyCrypto Token - 1 | MyCrypto Token - 2 | MyCrypto Token - 3 |
 
 Finally, the below screen shots outline an actual transaction on the Ropsten test network.  Due to limited ETH available on the test network, a transaction of 100 wei was made.  This is reflected in the transaction screen shots below, but also means the token value will continue to show 0 due to such a small amount of wei being transacted.  
 
 The screenshot below shows transaction hash details from MyCrypto. 
-|![MyCrypto Transaction 1](Screenshots/mycrypto_transaction1.PNG "MyCrypto Transaction 1") | ![MyCrypto Transaction 2](Screenshots/mycrypto_transaction2.png "MyCrypto Transaction 2") | ![MyCrypto Transaction 3](Screenshots/mycrypto_transaction3.png "MyCrypto Transaction 3") |
+|![MyCrypto Transaction 1](Screenshots/mycrypto_transaction1.png "MyCrypto Transaction 1") | ![MyCrypto Transaction 2](Screenshots/mycrypto_transaction2.png "MyCrypto Transaction 2") | ![MyCrypto Transaction 3](Screenshots/mycrypto_transaction3.png "MyCrypto Transaction 3") |
 |:---:|:---:|:---:|
 | MyCrypto Transaction - 1 | MyCrypto Transaction - 2 | MyCrypto Transaction - 3 |
 
 The screenshot below shows the transaction on Etherscan, which reflects the value of 10 wei transacted.  
 
-![Etherscan Transaction](Screenshots/etherscan_transaction.PNG)
+![Etherscan Transaction](Screenshots/etherscan_transaction.png)
 
 **CONGRATULATIONS ON MINTING AND SUCESSFULLY HAVING A CROWDSALE OF YOUR ERC-20 TOKEN!!!**
